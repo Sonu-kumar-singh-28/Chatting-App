@@ -5,7 +5,9 @@ import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
 import com.shashank.sony.fancytoastlib.FancyToast
+import com.ssu.portfolio.chattingapp.data.User
 import com.ssu.portfolio.chattingapp.databinding.ActivityRegisterScreenBinding
 
 class RegisterScreenActivity : AppCompatActivity() {
@@ -14,6 +16,8 @@ class RegisterScreenActivity : AppCompatActivity() {
         ActivityRegisterScreenBinding.inflate(layoutInflater)
     }
     private lateinit var auth: FirebaseAuth
+
+    private val firestore by lazy { FirebaseFirestore.getInstance() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,18 +57,52 @@ class RegisterScreenActivity : AppCompatActivity() {
                     auth.createUserWithEmailAndPassword(useremail, userpassword)
                         .addOnCompleteListener { task ->
                             if (task.isSuccessful) {
-                                FancyToast.makeText(this, "Registered Successfully",
-                                    FancyToast.LENGTH_SHORT, FancyToast.SUCCESS, false).show()
-                                startActivity(Intent(this, LoginScreenActivity::class.java))
-                                finish()
+                                val firebaseUser = task.result?.user
+                                val uid = firebaseUser?.uid
+
+                                if (uid != null) {
+                                    saveUserDataToFirestore(uid, username, useremail)
+                                } else {
+                                    handleRegistrationError(Exception("Auth successful but user UID is null."))
+                                }
                             } else {
-                                FancyToast.makeText(this,
-                                    "Error: ${task.exception?.message}",
-                                    FancyToast.LENGTH_SHORT, FancyToast.WARNING, false).show()
+                                handleRegistrationError(task.exception)
                             }
                         }
                 }
             }
         }
+    }
+
+    //  Data saving logic for Firestore
+    private fun saveUserDataToFirestore(uid: String, username: String, email: String) {
+        val newUser = User(
+            uid = uid,
+            username = username,
+            email = email,
+            username_lowercase = username.lowercase(),
+            email_lowercase = email.lowercase()
+        )
+
+        firestore.collection("users")
+            .document(uid)
+            .set(newUser)
+            .addOnSuccessListener {
+                // Successful Auth and Firestore save
+                FancyToast.makeText(this, "Registered Successfully",
+                    FancyToast.LENGTH_SHORT, FancyToast.SUCCESS, false).show()
+                startActivity(Intent(this, LoginScreenActivity::class.java))
+                finish()
+            }
+            .addOnFailureListener { e ->
+                auth.currentUser?.delete()
+                handleRegistrationError(e)
+            }
+    }
+
+    private fun handleRegistrationError(e: Exception?) {
+        FancyToast.makeText(this,
+            "Error: ${e?.message}",
+            FancyToast.LENGTH_LONG, FancyToast.WARNING, false).show()
     }
 }

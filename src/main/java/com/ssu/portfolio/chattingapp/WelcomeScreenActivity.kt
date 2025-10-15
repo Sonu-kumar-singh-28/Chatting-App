@@ -19,7 +19,6 @@ class WelcomeScreenActivity : AppCompatActivity() {
 
     fun WelcometoLogin(){
         val getstartedbutton = findViewById<Button>(R.id.getstartedbutton)
-
         getstartedbutton.setOnClickListener {
             startActivity(Intent(this, LoginScreenActivity::class.java))
             finish()

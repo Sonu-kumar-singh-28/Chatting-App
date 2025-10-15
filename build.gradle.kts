@@ -50,6 +50,7 @@ dependencies {
     implementation(libs.androidx.credentials)
     implementation(libs.androidx.credentials.play.services.auth)
     implementation(libs.googleid)
+    implementation(libs.androidx.recyclerview)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -59,4 +60,12 @@ dependencies {
 
     // Fancy Toast
     implementation("io.github.shashank02051997:FancyToast:2.0.2")
+
+    // cloud firestore
+    implementation("com.google.firebase:firebase-firestore:26.0.1")
+    implementation("com.firebaseui:firebase-ui-firestore:9.0.0")
+
+    val firebaseVersion = "32.8.0"
+    implementation(platform("com.google.firebase:firebase-bom:$firebaseVersion"))
+    implementation("com.google.firebase:firebase-firestore-ktx")
 }

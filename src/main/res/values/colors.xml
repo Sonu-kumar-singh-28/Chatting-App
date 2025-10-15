@@ -35,5 +35,7 @@
         <color name="login_bg">#D81B60</color>
         <color name="register_bg">#E91E63</color>
         <color name="main_bg">#F06292</color>
+        <color name="chat_color_sender">#1E88E5</color>
+        <color name="chat_color_reciever">#7CB342</color>
 
 </resources>
