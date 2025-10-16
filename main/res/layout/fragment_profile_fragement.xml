@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="@android:color/white"
+    android:padding="24dp">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginBottom="40dp"
+        app:cardCornerRadius="60dp"
+        app:cardElevation="10dp"
+        android:id="@+id/profile_image_card">
+
+        <ImageView
+            android:id="@+id/profile_image_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/magenta"
+            android:tint="@color/white"
+            android:contentDescription="User profile picture"
+            android:scaleType="centerCrop"
+            android:src="@drawable/img_person" />
+    </androidx.cardview.widget.CardView>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+        android:hint="Username"
+        app:boxBackgroundColor="#F3E5F5"
+        app:startIconTint="@color/magenta"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:background="@drawable/rounded_button"
+            android:id="@+id/profile_username"
+            android:textColor="@android:color/black"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+        android:hint="Email ID (Disabled)"
+        app:boxBackgroundColor="#F3E5F5"
+        app:startIconTint="@color/magenta"
+        android:layout_marginBottom="32dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:enabled="false"
+            android:background="@drawable/rounded_button"
+            android:id="@+id/profile_email"
+            android:textColor="@android:color/darker_gray"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:backgroundTint="@color/magenta"
+            android:text="Update Profile"
+            android:textColor="@android:color/white"
+            android:paddingVertical="14dp"
+            android:textSize="18sp"
+            app:cornerRadius="8dp"
+            app:elevation="4dp"
+            android:id="@+id/profle_update_btn"/>
+
+        <ProgressBar
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="center"
+            android:indeterminateTint="@android:color/white"
+            android:visibility="gone"
+            android:id="@+id/profile_progress_bar"/>
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/logout_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:padding="8dp"
+        android:drawablePadding="8dp"
+        android:drawableStart="@drawable/ic_logout"
+        android:drawableTint="@color/magenta"
+        android:text="Logout"
+        android:textColor="@color/magenta"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+</LinearLayout>
