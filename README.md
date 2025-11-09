@@ -194,4 +194,4 @@ Distributed under the **MIT License**. See the `LICENSE` file for more informati
 **Sonu Kumar Singh**
 * **Email:** sonusinghsengar28@gmail.com
 * **Project Link:** https://github.com/Sonu-Kumar-Singh-28/Chatting-App
-* /
+
