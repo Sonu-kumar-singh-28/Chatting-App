@@ -41,7 +41,6 @@ class ChatRecyclerAdapter(
             holder.rightChatLayout.visibility = View.VISIBLE
             holder.rightChatTextview.text = model.message
         } else {
-            // Incomplete code fix
             holder.leftChatLayout.visibility = View.VISIBLE
             holder.leftChatTextview.text = model.message
         }

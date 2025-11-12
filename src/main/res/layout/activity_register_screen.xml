@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/register_bg"
-    tools:context=".RegisterScreenActivity">
+    tools:context=".ui.RegisterScreenActivity">
 
     <!-- Top Image -->
     <ImageView

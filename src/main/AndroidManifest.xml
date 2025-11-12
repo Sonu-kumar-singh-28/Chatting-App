@@ -14,25 +14,25 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ChattingApp">
         <activity
-            android:name=".ChatActivity"
+            android:name=".ui.ChatActivity"
             android:exported="false" />
         <activity
-            android:name=".Search_User_Activity"
+            android:name=".ui.Search_User_Activity"
             android:exported="false" />
         <activity
-            android:name=".MainScreenActivity"
+            android:name=".ui.MainScreenActivity"
             android:exported="false" />
         <activity
-            android:name=".WelcomeScreenActivity"
+            android:name=".ui.WelcomeScreenActivity"
             android:exported="false" />
         <activity
-            android:name=".RegisterScreenActivity"
+            android:name=".ui.RegisterScreenActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginScreenActivity"
+            android:name=".ui.LoginScreenActivity"
             android:exported="false" />
         <activity
-            android:name=".SplashScreenActivity"
+            android:name=".ui.SplashScreenActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

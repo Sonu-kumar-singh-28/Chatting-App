@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".MainScreenActivity">
+    tools:context=".ui.MainScreenActivity">
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -41,12 +41,14 @@
 
     <FrameLayout
         android:id="@+id/frame_layout"
-        android:layout_width="409dp"
-        android:layout_height="604dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+
+        >
 
     </FrameLayout>
 

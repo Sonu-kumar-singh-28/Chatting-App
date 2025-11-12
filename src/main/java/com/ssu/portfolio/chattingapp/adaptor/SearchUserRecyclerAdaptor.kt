@@ -1,14 +1,12 @@
 package com.ssu.portfolio.chattingapp.adaptor
 
 import android.content.Intent
-import android.graphics.ColorSpace
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.lifecycle.viewmodel.viewModelFactory
 import androidx.recyclerview.widget.RecyclerView
-import com.ssu.portfolio.chattingapp.ChatActivity
+import com.ssu.portfolio.chattingapp.ui.ChatActivity
 import com.ssu.portfolio.chattingapp.R
 import com.ssu.portfolio.chattingapp.data.User
 import com.ssu.portfolio.chattingapp.utils.AndroidUtils
