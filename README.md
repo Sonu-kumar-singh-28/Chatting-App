@@ -4,7 +4,7 @@ Welcome to the repository for the **Chatting-App**! This is a real-time mobile m
 
 ---
 
-## ✨ Key Features...
+## ✨ Key Features....
 
 Our goal was to create a smooth and intuitive user experience. The application includes robust functionalities for connecting and communicating:
 
