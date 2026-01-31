@@ -1,4 +1,4 @@
-Chatting-app Readme
+Chatting-app Readme..
 
 Welcome to the repository for the Chatting-App. This is a real-time mobile messaging application designed to connect users through fast, direct, and seamless communication.
 
